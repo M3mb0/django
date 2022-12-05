@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Youtube MP3 Convertor</title>
+    </head>
+    <body>
+        <div>
+            <h1>Youtube MP3 Convertor</h1>
+        </div>
+        <div>
+            <p>Using Jinja2 Templates</p>
+            <p>Running on {{ os }} using Python v{{ py_version }}</p>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <button>Login</button>
+                </li>
+                <li>
+                    <button>Register</button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <a href="/convertor"><button>Convert</button></a>
+        </div>
+        <div>
+            <p>Sesiuni active {{ sessions | length }}</p>
+            <ul>
+                {% for session in sessions %}
+                <li>{{ session.session_key }} expires at: {{ session.expire_date }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            {% if user.is_authenticated %}
+            <p>User logat! {{ user.username | title }}</p>
+            {% else %}
+            <p>Vizitator!</p>
+            {% endif %}
+        </div>
+
+    </body>
+</html>
