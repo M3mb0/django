@@ -5,7 +5,11 @@
     <body>
         <div>
             <p> Insert YouTube URL here</p>
-            <input type = text>
+            <form action="/convertor" method="post">
+                <input type="text" name="url"/>
+                {% csrf_token %}
+                <button type="submit">Convert!</button>
+            </form>
         </div>
     </body>
 </html>
