@@ -4,8 +4,8 @@
     </head>
     <body>
         <div>
-            <p> Insert YouTube URL here</p>
-            <form action="/convertor" method="post">
+            <h{{ zoom }}>Insert Youtube url here</h{{ zoom }}>
+            <form action="{% url 'convertor:convertor' %}" method="post">
                 <input type="text" name="url"/>
                 {% csrf_token %}
                 <button type="submit">Convert!</button>

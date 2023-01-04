@@ -1,0 +1,24 @@
+
+<html>
+    <head>
+        <title>History</title>
+    </head>
+    <body>
+        <h1>Your download history</h1>
+        <div>
+             <table border="1">
+                 <tbody>
+                    {% for line in output_history %}
+                    <tr>
+                        <td>{{ line.ts }}</td>
+                        <td>{{ line.yt_url }}</td>
+                        {% if line.file %}
+                        <td><a href="{{ line.file.url }}">Download</a></td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                 </tbody>
+             </table>
+        </div>
+    </body>
+</html>

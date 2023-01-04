@@ -55,7 +55,7 @@ ROOT_URLCONF = 'yt_mp3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +122,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # custom
 
 DOWNLOADS_DIR = BASE_DIR / "downloads"
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"

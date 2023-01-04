@@ -5,6 +5,7 @@
 
     <body>
         <h1>Your file is ready for download!</h1>
-        <pre>{{ request.POST.url }}</pre>
+        <p>Youtube URL: {{ request.POST.url }}</p>
+        <p>Download path: <a href='{{ conv.file.url }}'>here</a></p>
     </body>
 </html>

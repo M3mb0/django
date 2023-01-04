@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <title>Youtube MP3 Convertor</title>
@@ -13,7 +14,7 @@
         <div>
             <ul>
                 <li>
-                    <button>Login</button>
+                    <a href="{% url 'login' %}"><button>Login</button></a>
                 </li>
                 <li>
                     <button>Register</button>
@@ -21,7 +22,8 @@
             </ul>
         </div>
         <div>
-            <a href="/convertor"><button>Convert</button></a>
+            <a href="{% url 'convertor:convertor' %}"><button>Convert</button></a>
+            <a href="{% url 'convertor:history' %}"><button>History</button></a>
         </div>
         <div>
             <p>Sesiuni active {{ sessions | length }}</p>
@@ -34,6 +36,7 @@
         <div>
             {% if user.is_authenticated %}
             <p>User logat! {{ user.username | title }}</p>
+            <a href="{% url 'logout' %}">Logout!</a>
             {% else %}
             <p>Vizitator!</p>
             {% endif %}
